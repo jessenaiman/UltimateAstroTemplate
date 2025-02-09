@@ -1,1 +1,1 @@
-npx vitest run src/test/unit/theme.test.ts
+npx tsc --noEmit
