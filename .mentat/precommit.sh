@@ -1,3 +1,3 @@
 npm run test
-npm run test:coverage
+npx playwright install --with-deps
 npx playwright test
