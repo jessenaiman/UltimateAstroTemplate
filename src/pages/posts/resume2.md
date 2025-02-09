@@ -1,8 +1,9 @@
 ---
-layout: '../../layouts/Layout.astro'
-title: 'Jesse Naiman - Future Stack Developer'
-description: 'Future Stack Developer with nearly two decades of experience in web development, community support, and technical leadership'
+layout: "../../layouts/Layout.astro"
+title: "Jesse Naiman - Future Stack Developer"
+description: "Future Stack Developer with nearly two decades of experience in web development, community support, and technical leadership"
 ---
+
 # Jesse Naiman
 
 **Future Stack Developer/Community Support**  
@@ -17,8 +18,10 @@ Driven by a passion for innovation and a deep understanding of both established 
 ## Work Experience
 
 ### Optical Survey Equipment Technician
+
 **A.N. Survey Equipment** - Aurora, ON  
-*April 2018 to Present*
+_April 2018 to Present_
+
 - Repaired and calibrated precision survey equipment, including lasers and theodolites
 - Managed invoices in QuickBooks
 - Handled shipping and receiving
@@ -26,21 +29,27 @@ Driven by a passion for innovation and a deep understanding of both established 
 - Provided friendly customer service support
 
 ### Technical and Social Media Support
+
 **Marinade Finance** - Web 3  
-*September 2021 to August 2022*
+_September 2021 to August 2022_
+
 - Responded and advertised the benefits of using Marinade to stake Solana
 - Advised institutions and individuals in financial safety, achieving my goal of increasing the amount of dollars locked into the Marinade service
 
 ### Senior Web Developer
+
 **Ample Organics** - Toronto, ON  
-*June 2016 to April 2017*
+_June 2016 to April 2017_
+
 - Developed an automated print manager in .NET
 - Created complex front-end JavaScript components to read from a portable handheld device
 - Devised an algorithm to audit and scan hundreds of unlabeled products
 
 ### Team Lead / Web Architect
+
 **BSM Wireless Inc.** - Toronto, ON  
-*July 2015 to September 2015*
+_July 2015 to September 2015_
+
 - Led a remote team to deliver a modern UI that could be easily integrated into multiple products.
 - Developed a solution to implement dynamic controls in an unstable environment.
 - Significantly improved the speed of the main GPS and mapping components by optimizing how the JavaScript was delivered
@@ -48,8 +57,10 @@ Driven by a passion for innovation and a deep understanding of both established 
 - Trained staff on the use of Git and how it integrates with GitHub.
 
 ### Senior Developer
+
 **Ontario Liberal Party** - Toronto, ON  
-*March 2013 to September 2015*
+_March 2013 to September 2015_
+
 - Managed hundreds of websites.
 - Handled financial transactions.
 - Developed an OAuth API using MongoDB and Ruby on Rails.
@@ -61,6 +72,7 @@ Driven by a passion for innovation and a deep understanding of both established 
 - Created Angular form controls for a responsive donation and membership system.
 
 **Accomplishments**
+
 - Ontario Liberal Website
 - Candidate websites throughout the election
 - MPP websites
@@ -69,8 +81,10 @@ Driven by a passion for innovation and a deep understanding of both established 
 - Online Financial Systems
 
 ### Web Developer
+
 **Naiman Consulting** - Markham, ON  
-*November 2003 to March 2013*
+_November 2003 to March 2013_
+
 - Migrated a WPF application into a new WPF project, and later a Windows form application
 - Developed complex LINQ queries to communicate with a CRM / Dynamics web service.
 - Refactored code into a dependency injection and domain-driven model.
@@ -83,16 +97,20 @@ Driven by a passion for innovation and a deep understanding of both established 
 - Programmed in .NET, and JavaScript.
 
 ### Senior Programmer
+
 **Liberal Party** - Toronto, ON  
-*April 2011 to June 2011*
+_April 2011 to June 2011_
+
 - Upgraded a minimalist website to a PHP CMS allowing for unlimited possibilities.
 - Assisted in training staff members on various aspects of people skills.
 - Translated technical jargon into manageable pieces so staff could aid the MPP.
 - Created a customized speakers package to promote the MPP and allow him to present his vision.
 
 ### Senior Programmer
+
 **Careerify** - Toronto, ON  
-*April 2010 to March 2011*
+_April 2010 to March 2011_
+
 - Architected and designed a career recruitment website using MVC, JavaScript (jQuery), and CSS.
 - Integrated social networking Facebook, Twitter, and LinkedIn platforms with ASP.NET MVC3 technology.
 - Used jQuery to mimic standard controller actions and extended the JavaScript library to simplify text arrays.
@@ -100,8 +118,10 @@ Driven by a passion for innovation and a deep understanding of both established 
 - Designed T-SQL scripts to minimize the impact of changes on remote servers.
 
 ### Team Lead
+
 **Improvement Interactive** - Toronto, ON  
-*June 2009 to March 2010*
+_June 2009 to March 2010_
+
 - Worked directly with Mount Sinai management and CEOs.
 - Coordinated software upgrades with an international team of developers.
 - Handled critical system failures and determined ways to minimize disruption for the entire hospital.
@@ -109,8 +129,10 @@ Driven by a passion for innovation and a deep understanding of both established 
 - Drafted a change proposal that would use JavaScript to address critical bugs.
 
 ### Senior Web Programmer
+
 **Resolver** - Toronto, ON  
-*June 2008 to April 2009*
+_June 2008 to April 2009_
+
 - Presented a system overhaul using Domain Driven Design to address performance bottlenecks.
 - Applied Test Driven Design unit tests to create nearly unbreakable code.
 - Responsible for globalizing the main application to support more than one language simultaneously.
@@ -118,16 +140,20 @@ Driven by a passion for innovation and a deep understanding of both established 
 - Reduced overtime workflow by presenting and implementing a jQuery solution to a typical server-side problem.
 
 ### Web Programmer
+
 **Canwest** - Toronto, ON  
-*August 2007 to June 2008*
+_August 2007 to June 2008_
+
 - Created a .NET tool to publish CanWest's online video content that could communicate across 3 servers.
 - Developed automation tools to speed the creation and implementation of new shows.
 - Converted ad media software to communicate across .NET platforms using jQuery and XSLT.
 - Created a reusable site template using ASP.NET MVC and LINQ.
 
 ### QA / Programmer Analyst
+
 **80/20** - Toronto, ON  
-*January 2007 to May 2007*
+_January 2007 to May 2007_
+
 - Tested major CMS products for migrating the company into a .NET environment.
 - Bridged a C# Text Editor control within a classic ASP page to reduce customer support requests by over 20%.
 - Drafted a plan to convert ASP code into VB.NET format for a gradual upgrade.
@@ -135,8 +161,10 @@ Driven by a passion for innovation and a deep understanding of both established 
 - Demonstrated to the team how to use CSS reset script to improve browser compatibility.
 
 ### ASP.NET / SQL Web Developer
+
 **GRFE** - Toronto, ON
-*September 2006 to January 2007*
+_September 2006 to January 2007_
+
 - Worked on a real estate site as well as a video sharing site (YouTube clone).
 - Programmed in C#, used Visual Studio 2005 and SQL Server Management Studio software.
 - Lead Developer for a video sharing website, learning new technology as necessary.
@@ -147,17 +175,18 @@ Driven by a passion for innovation and a deep understanding of both established 
 ## Education
 
 **Code School**  
-*2012*  
+_2012_  
 Diploma in Programmer Analyst / Internet Solutions Developer
 
 **CDI College** - Newmarket, ON  
-*2002 to 2003*  
+_2002 to 2003_  
 BA in Creative Writing
 
 **Nippissing University** - North Bay, ON  
-*1998 to 2001*
+_1998 to 2001_
 
 ## Skills
+
 - Inventory Management
 - Microsoft Word
 - Scheduling
@@ -196,5 +225,6 @@ BA in Creative Writing
 - Windows, Linux (Ubuntu, Suse, Fedora)
 
 **AI/ML:**
+
 - Large Language Models: ChatGPT, Claude 3.5, Deepseek, Gemini, LLaMa, Phi, Qwen, Mixtral
-- Local AI Tools: Ollama, Jan 
+- Local AI Tools: Ollama, Jan

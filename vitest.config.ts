@@ -1,19 +1,19 @@
 /// <reference types="vitest" />
-import { getViteConfig } from 'astro/config';
+import { getViteConfig } from "astro/config";
 
 export default getViteConfig({
   test: {
-    environment: 'jsdom',
+    environment: "jsdom",
     globals: true,
-    setupFiles: './src/test/setup.ts',
-    include: ['src/test/**/*.{test,spec}.{js,ts,jsx,tsx}'],
+    setupFiles: "./src/test/setup.ts",
+    include: ["src/test/**/*.{test,spec}.{js,ts,jsx,tsx}"],
     coverage: {
-      reporter: ['text', 'json', 'html'],
+      reporter: ["text", "json", "html"],
       exclude: [
-        'node_modules/',
-        'src/test/setup.ts',
-        'src/test/fixtures/',
-        '**/*.d.ts',
+        "node_modules/",
+        "src/test/setup.ts",
+        "src/test/fixtures/",
+        "**/*.d.ts",
       ],
     },
     deps: {
@@ -22,9 +22,9 @@ export default getViteConfig({
   },
   resolve: {
     alias: {
-      '@components': 'src/components',
-      '@layouts': 'src/layouts',
-      '@utils': 'src/utils',
+      "@components": "src/components",
+      "@layouts": "src/layouts",
+      "@utils": "src/utils",
     },
   },
 });

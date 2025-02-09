@@ -1,9 +1,9 @@
-import React from 'react';
-import { motion, LazyMotion, domAnimation } from 'framer-motion';
+import React from "react";
+import { motion, LazyMotion, domAnimation } from "framer-motion";
 
 const LivePreview: React.FC = () => {
-  const [color, setColor] = React.useState('#3B82F6');
-  
+  const [color, setColor] = React.useState("#3B82F6");
+
   return (
     <LazyMotion features={domAnimation}>
       <motion.div
@@ -20,21 +20,26 @@ const LivePreview: React.FC = () => {
             </div>
             <div className="text-sm text-gray-400">Live Preview</div>
           </div>
-          
+
           <div className="p-1 m-7">
             <div className="space-y-3">
               <div className="text-center space-y-2">
                 <p className="text-gray-300 font-medium">Try it yourself!</p>
-                <p className="text-sm text-gray-400">Click the input below to choose a color</p>
+                <p className="text-sm text-gray-400">
+                  Click the input below to choose a color
+                </p>
               </div>
-              <input 
-                type="color" 
+              <input
+                type="color"
                 value={color}
                 onChange={(e) => setColor(e.target.value)}
                 className="w-full h-12 rounded-lg cursor-pointer bg-transparent hover:scale-[1.02] transition-transform"
               />
               <div className="text-center">
-                <p className="text-sm text-gray-400">Selected color: <span className="font-mono text-gray-300">{color}</span></p>
+                <p className="text-sm text-gray-400">
+                  Selected color:{" "}
+                  <span className="font-mono text-gray-300">{color}</span>
+                </p>
               </div>
             </div>
           </div>
@@ -74,8 +79,7 @@ const CodeCard: React.FC<CodeCardProps> = ({ title, code }) => (
 );
 
 const Hero: React.FC = () => {
-  const reactCode = 
-  ` 
+  const reactCode = ` 
 // Color Picker Component
 import { useState } from 'react';
 
@@ -110,18 +114,18 @@ import ColorPicker from '../components/ColorPicker';
 </div>`;
 
   const scrollToChat = () => {
-    const chatSection = document.getElementById('chat-section');
+    const chatSection = document.getElementById("chat-section");
     if (chatSection) {
-      chatSection.scrollIntoView({ behavior: 'smooth' });
+      chatSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section className="min-h-[80vh] relative flex items-center justify-center py-20 mt-20">      
+    <section className="min-h-[80vh] relative flex items-center justify-center py-20 mt-20">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-12">
           <LazyMotion features={domAnimation}>
-            <motion.h1 
+            <motion.h1
               className="text-5xl md:text-6xl font-bold text-gray-300 mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -131,13 +135,14 @@ import ColorPicker from '../components/ColorPicker';
             </motion.h1>
           </LazyMotion>
           <LazyMotion features={domAnimation}>
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-300 mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Build dynamic, interactive components with the power of React in your Astro pages.
+              Build dynamic, interactive components with the power of React in
+              your Astro pages.
             </motion.p>
           </LazyMotion>
           <LazyMotion features={domAnimation}>
@@ -150,18 +155,18 @@ import ColorPicker from '../components/ColorPicker';
               whileHover={{ y: 2 }}
             >
               Chat with Me
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-5 w-5 transform group-hover:translate-y-1 transition-transform duration-200" 
-                fill="none" 
-                viewBox="0 0 24 24" 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 transform group-hover:translate-y-1 transition-transform duration-200"
+                fill="none"
+                viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3" 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
                 />
               </svg>
             </motion.button>

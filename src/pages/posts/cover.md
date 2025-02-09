@@ -13,6 +13,7 @@ I am writing to express my interest in the software development position at your
 Throughout my career, I have demonstrated my ability to lead teams and deliver high-quality solutions. At **A.N. Survey Equipment**, I successfully managed the repair and calibration of precision survey equipment while providing exceptional customer service. My role as a **Senior Web Developer** at **Ample Organics** allowed me to develop automated solutions that improved operational efficiency.
 
 I possess a diverse skill set that includes:
+
 - **Programming Languages**: Proficient in JavaScript, C#, and PHP, with experience in ASP.NET and Ruby on Rails.
 - **Frameworks**: Expertise in React and .NET MVC, enabling me to create dynamic and responsive web applications.
 - **Technical Proficiencies**: Strong background in Agile methodologies, unit testing, and continuous integration, ensuring high-quality code delivery.

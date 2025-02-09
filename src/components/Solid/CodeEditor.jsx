@@ -1,16 +1,16 @@
-import { createSignal, createEffect, Show, onMount, onCleanup } from 'solid-js';
-import * as monaco from 'monaco-editor';
+import { createSignal, createEffect, Show, onMount, onCleanup } from "solid-js";
+import * as monaco from "monaco-editor";
 
 const Features = () => {
   let editorContainer;
   let editor;
   let previewContainer;
-  const [activeTab, setActiveTab] = createSignal('playground');
+  const [activeTab, setActiveTab] = createSignal("playground");
   const [code, setCode] = createSignal(defaultTemplate);
   const [error, setError] = createSignal(null);
-  const [theme, setTheme] = createSignal('vs-dark');
+  const [theme, setTheme] = createSignal("vs-dark");
   const [previewCount, setPreviewCount] = createSignal(0);
-  const [selectedColor, setSelectedColor] = createSignal('#00DC82');
+  const [selectedColor, setSelectedColor] = createSignal("#00DC82");
   const [isMobile, setIsMobile] = createSignal(false);
   const [isEditorReady, setIsEditorReady] = createSignal(false);
 
@@ -58,23 +58,23 @@ const Features = () => {
       setIsMobile(window.innerWidth < 768);
     };
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
 
     // Initialize Monaco Editor
     if (!editor && editorContainer) {
       editor = monaco.editor.create(editorContainer, {
         value: code(),
-        language: 'html',
+        language: "html",
         theme: theme(),
         minimap: { enabled: !isMobile() },
         fontSize: 14,
-        lineNumbers: 'on',
+        lineNumbers: "on",
         roundedSelection: true,
         scrollBeyondLastLine: false,
         automaticLayout: true,
-        wordWrap: 'on',
+        wordWrap: "on",
         suggestOnTriggerCharacters: true,
-        snippetSuggestions: 'on',
+        snippetSuggestions: "on",
         formatOnPaste: true,
         formatOnType: true,
         tabSize: 2,
@@ -92,7 +92,7 @@ const Features = () => {
 
     // Cleanup
     onCleanup(() => {
-      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener("resize", checkMobile);
       if (editor) {
         editor.dispose();
       }
@@ -103,7 +103,7 @@ const Features = () => {
     if (editor) {
       editor.updateOptions({
         minimap: { enabled: !isMobile() },
-        lineNumbers: isMobile() ? 'off' : 'on',
+        lineNumbers: isMobile() ? "off" : "on",
       });
       monaco.editor.setTheme(theme());
     }
@@ -114,7 +114,7 @@ const Features = () => {
       return htmlContent;
     } catch (e) {
       setError(e.message);
-      return '';
+      return "";
     }
   };
 
@@ -160,53 +160,59 @@ const Features = () => {
       </div>
     </div>`,
     colorPalette: () => {
-      const colors = ['#00DC82', '#36E4DA', '#4C7AF0', '#FF5D01', '#FF3E00'];
+      const colors = ["#00DC82", "#36E4DA", "#4C7AF0", "#FF5D01", "#FF3E00"];
       return `
       <div class="text-center space-y-4">
         <h2 class="text-2xl text-gradient">Interactive Color Palette</h2>
         <div class="grid grid-cols-5 gap-3">
-          ${colors.map(color => `
+          ${colors
+            .map(
+              (color) => `
             <button 
-              class="color-block p-8 rounded-lg transition-transform hover:scale-105 ${color === selectedColor() ? 'ring-2 ring-white' : ''}" 
+              class="color-block p-8 rounded-lg transition-transform hover:scale-105 ${color === selectedColor() ? "ring-2 ring-white" : ""}" 
               style="background: ${color}"
               data-color="${color}"
             ></button>
-          `).join('')}
+          `,
+            )
+            .join("")}
         </div>
         <div class="mt-4">
           <p class="text-lg">Selected Color: <span class="font-mono">${selectedColor()}</span></p>
         </div>
       </div>`;
-    }
+    },
   };
 
   return (
-    <div class={`w-full ${isMobile() ? 'flex flex-col' : 'grid grid-cols-2'} gap-4`}>
+    <div
+      class={`w-full ${isMobile() ? "flex flex-col" : "grid grid-cols-2"} gap-4`}
+    >
       <div class="flex flex-col h-full">
         <div class="flex items-center justify-between mb-2">
           <div class="flex space-x-2">
             <button
-              class={`px-3 py-1 rounded ${activeTab() === 'playground' ? 'bg-accent text-white' : 'bg-card hover:bg-accent/10'}`}
+              class={`px-3 py-1 rounded ${activeTab() === "playground" ? "bg-accent text-white" : "bg-card hover:bg-accent/10"}`}
               onClick={() => {
-                setActiveTab('playground');
+                setActiveTab("playground");
                 editor.setValue(examples.default);
               }}
             >
               Playground
             </button>
             <button
-              class={`px-3 py-1 rounded ${activeTab() === 'counter' ? 'bg-accent text-white' : 'bg-card hover:bg-accent/10'}`}
+              class={`px-3 py-1 rounded ${activeTab() === "counter" ? "bg-accent text-white" : "bg-card hover:bg-accent/10"}`}
               onClick={() => {
-                setActiveTab('counter');
+                setActiveTab("counter");
                 editor.setValue(examples.counter);
               }}
             >
               Counter
             </button>
             <button
-              class={`px-3 py-1 rounded ${activeTab() === 'colors' ? 'bg-accent text-white' : 'bg-card hover:bg-accent/10'}`}
+              class={`px-3 py-1 rounded ${activeTab() === "colors" ? "bg-accent text-white" : "bg-card hover:bg-accent/10"}`}
               onClick={() => {
-                setActiveTab('colors');
+                setActiveTab("colors");
                 editor.setValue(examples.colorPalette());
               }}
             >
@@ -214,7 +220,7 @@ const Features = () => {
             </button>
           </div>
         </div>
-        
+
         <Show when={isEditorReady()}>
           <div class="relative">
             <div
@@ -229,7 +235,7 @@ const Features = () => {
         <h3 class="text-lg font-semibold mb-2">Preview</h3>
         <div
           ref={previewContainer}
-          class={`preview-area flex-grow p-4 border border-card rounded-lg ${theme() === 'vs-dark' ? 'dark' : 'light'}`}
+          class={`preview-area flex-grow p-4 border border-card rounded-lg ${theme() === "vs-dark" ? "dark" : "light"}`}
           innerHTML={renderPreview(code())}
         />
         <Show when={error()}>

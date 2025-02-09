@@ -1,11 +1,13 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 
 export default function Calculator() {
-  const [displayValue, setDisplayValue] = useState("0")
-  const [graphPoints, setGraphPoints] = useState<{ x: number; y: number }[]>([])
-  const [currentTab, setCurrentTab] = useState("calculator")
+  const [displayValue, setDisplayValue] = useState("0");
+  const [graphPoints, setGraphPoints] = useState<{ x: number; y: number }[]>(
+    [],
+  );
+  const [currentTab, setCurrentTab] = useState("calculator");
 
   // Scientific functions
   const scientificFunctions = {
@@ -17,37 +19,37 @@ export default function Calculator() {
     sqrt: Math.sqrt,
     pow2: (x: number) => Math.pow(x, 2),
     pow3: (x: number) => Math.pow(x, 3),
-  }
+  };
 
   const handleNumber = (num: string) => {
-    setDisplayValue((prev) => (prev === "0" ? num : prev + num))
-  }
+    setDisplayValue((prev) => (prev === "0" ? num : prev + num));
+  };
 
   const handleOperator = (op: string) => {
-    setDisplayValue((prev) => prev + op)
-  }
+    setDisplayValue((prev) => prev + op);
+  };
 
   const handleScientific = (func: keyof typeof scientificFunctions) => {
     try {
-      const value = Number.parseFloat(displayValue)
-      const result = scientificFunctions[func](value)
-      setDisplayValue(result.toString())
+      const value = Number.parseFloat(displayValue);
+      const result = scientificFunctions[func](value);
+      setDisplayValue(result.toString());
     } catch (error) {
-      setDisplayValue("Error")
+      setDisplayValue("Error");
     }
-  }
+  };
 
   const calculate = () => {
     try {
-      setDisplayValue(eval(displayValue).toString())
+      setDisplayValue(eval(displayValue).toString());
     } catch {
-      setDisplayValue("Error")
+      setDisplayValue("Error");
     }
-  }
+  };
 
   const clear = () => {
-    setDisplayValue("0")
-  }
+    setDisplayValue("0");
+  };
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4">
@@ -61,7 +63,10 @@ export default function Calculator() {
           checked={currentTab === "calculator"}
           onChange={() => setCurrentTab("calculator")}
         />
-        <div role="tabpanel" className={`tab-content p-5 ${currentTab === "calculator" ? "block" : "hidden"}`}>
+        <div
+          role="tabpanel"
+          className={`tab-content p-5 ${currentTab === "calculator" ? "block" : "hidden"}`}
+        >
           <div className="p-6 border rounded shadow bg-base-200">
             <input
               type="text"
@@ -71,28 +76,52 @@ export default function Calculator() {
             />
             <div className="grid grid-cols-4 gap-2">
               {/* Scientific Functions */}
-              <button className="btn btn-outline" onClick={() => handleScientific("sin")}>
+              <button
+                className="btn btn-outline"
+                onClick={() => handleScientific("sin")}
+              >
                 sin
               </button>
-              <button className="btn btn-outline" onClick={() => handleScientific("cos")}>
+              <button
+                className="btn btn-outline"
+                onClick={() => handleScientific("cos")}
+              >
                 cos
               </button>
-              <button className="btn btn-outline" onClick={() => handleScientific("tan")}>
+              <button
+                className="btn btn-outline"
+                onClick={() => handleScientific("tan")}
+              >
                 tan
               </button>
-              <button className="btn btn-outline" onClick={() => handleScientific("log")}>
+              <button
+                className="btn btn-outline"
+                onClick={() => handleScientific("log")}
+              >
                 log
               </button>
-              <button className="btn btn-outline" onClick={() => handleScientific("ln")}>
+              <button
+                className="btn btn-outline"
+                onClick={() => handleScientific("ln")}
+              >
                 ln
               </button>
-              <button className="btn btn-outline" onClick={() => handleScientific("sqrt")}>
+              <button
+                className="btn btn-outline"
+                onClick={() => handleScientific("sqrt")}
+              >
                 √
               </button>
-              <button className="btn btn-outline" onClick={() => handleScientific("pow2")}>
+              <button
+                className="btn btn-outline"
+                onClick={() => handleScientific("pow2")}
+              >
                 x²
               </button>
-              <button className="btn btn-outline" onClick={() => handleScientific("pow3")}>
+              <button
+                className="btn btn-outline"
+                onClick={() => handleScientific("pow3")}
+              >
                 x³
               </button>
 
@@ -106,7 +135,10 @@ export default function Calculator() {
               <button className="btn" onClick={() => handleNumber("9")}>
                 9
               </button>
-              <button className="btn btn-primary" onClick={() => handleOperator("+")}>
+              <button
+                className="btn btn-primary"
+                onClick={() => handleOperator("+")}
+              >
                 +
               </button>
               <button className="btn" onClick={() => handleNumber("4")}>
@@ -118,7 +150,10 @@ export default function Calculator() {
               <button className="btn" onClick={() => handleNumber("6")}>
                 6
               </button>
-              <button className="btn btn-primary" onClick={() => handleOperator("-")}>
+              <button
+                className="btn btn-primary"
+                onClick={() => handleOperator("-")}
+              >
                 -
               </button>
               <button className="btn" onClick={() => handleNumber("1")}>
@@ -130,7 +165,10 @@ export default function Calculator() {
               <button className="btn" onClick={() => handleNumber("3")}>
                 3
               </button>
-              <button className="btn btn-primary" onClick={() => handleOperator("*")}>
+              <button
+                className="btn btn-primary"
+                onClick={() => handleOperator("*")}
+              >
                 ×
               </button>
               <button className="btn" onClick={() => handleNumber("0")}>
@@ -142,7 +180,10 @@ export default function Calculator() {
               <button className="btn btn-accent" onClick={calculate}>
                 =
               </button>
-              <button className="btn btn-primary" onClick={() => handleOperator("/")}>
+              <button
+                className="btn btn-primary"
+                onClick={() => handleOperator("/")}
+              >
                 ÷
               </button>
               <button className="btn btn-error col-span-4" onClick={clear}>
@@ -161,12 +202,15 @@ export default function Calculator() {
           checked={currentTab === "graph"}
           onChange={() => setCurrentTab("graph")}
         />
-        <div role="tabpanel" className={`tab-content p-5 ${currentTab === "graph" ? "block" : "hidden"}`}>
+        <div
+          role="tabpanel"
+          className={`tab-content p-5 ${currentTab === "graph" ? "block" : "hidden"}`}
+        >
           <div className="p-6 border rounded shadow bg-base-200">
             <p>Graph functionality coming soon...</p>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

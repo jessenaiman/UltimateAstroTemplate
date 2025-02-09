@@ -1,7 +1,7 @@
-import { createSignal, createEffect, Show } from 'solid-js';
+import { createSignal, createEffect, Show } from "solid-js";
 
 const Features = () => {
-  const [activeTab, setActiveTab] = createSignal('playground');
+  const [activeTab, setActiveTab] = createSignal("playground");
   const [code, setCode] = createSignal(`<div class="max-w-md mx-auto p-4">
   <header class="text-center mb-4">
     <h1 class="text-2xl font-bold text-gradient">Welcome to Coding!</h1>
@@ -40,9 +40,9 @@ const Features = () => {
   </button>
 </div>`);
   const [error, setError] = createSignal(null);
-  const [theme, setTheme] = createSignal('dark');
+  const [theme, setTheme] = createSignal("dark");
   const [previewCount, setPreviewCount] = createSignal(0);
-  const [selectedColor, setSelectedColor] = createSignal('#00DC82');
+  const [selectedColor, setSelectedColor] = createSignal("#00DC82");
 
   // Sanitize and render HTML safely
   const renderPreview = (htmlContent) => {
@@ -50,7 +50,7 @@ const Features = () => {
       return htmlContent;
     } catch (e) {
       setError(e.message);
-      return '';
+      return "";
     }
   };
 
@@ -145,18 +145,22 @@ const Features = () => {
   };
 
   const colorPaletteExample = () => {
-    const colors = ['#00DC82', '#36E4DA', '#4C7AF0', '#FF5D01' , '#FF3E00'];  
+    const colors = ["#00DC82", "#36E4DA", "#4C7AF0", "#FF5D01", "#FF3E00"];
     const template = `
     <div class="text-center space-y-4">
       <h2 class="text-2xl text-gradient">Interactive Color Palette</h2>
       <div class="grid grid-cols-5 gap-3">
-        ${colors.map(color => `
+        ${colors
+          .map(
+            (color) => `
           <button 
-            class="color-block p-8 rounded-lg transition-transform hover:scale-105 ${color === selectedColor() ? 'ring-2 ring-white' : ''}" 
+            class="color-block p-8 rounded-lg transition-transform hover:scale-105 ${color === selectedColor() ? "ring-2 ring-white" : ""}" 
             style="background: ${color}"
             data-color="${color}"
           ></button>
-        `).join('')}
+        `,
+          )
+          .join("")}
       </div>
       <div class="mt-4">
         <p class="text-lg">Selected Color: <span class="font-mono">${selectedColor()}</span></p>
@@ -167,7 +171,7 @@ const Features = () => {
 
   // Add custom styles
   createEffect(() => {
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = `
       .text-gradient {
         background: linear-gradient(to right, #00DC82, #36E4DA);
@@ -207,38 +211,38 @@ const Features = () => {
 
   // Handle preview interactions
   createEffect(() => {
-    const preview = document.querySelector('.preview-area');
+    const preview = document.querySelector(".preview-area");
     if (!preview) return;
 
     const handleClick = (e) => {
-      const target = e.target.closest('button');
+      const target = e.target.closest("button");
       if (!target) return;
 
       // Handle counter buttons
-      if (target.id === 'increment' || target.matches('#increment *')) {
-        setPreviewCount(c => c + 1);
+      if (target.id === "increment" || target.matches("#increment *")) {
+        setPreviewCount((c) => c + 1);
         counterExample();
         // Add animation class
-        const numberElement = document.querySelector('.counter-number');
+        const numberElement = document.querySelector(".counter-number");
         if (numberElement) {
-          numberElement.classList.remove('counter-change');
+          numberElement.classList.remove("counter-change");
           void numberElement.offsetWidth; // Trigger reflow
-          numberElement.classList.add('counter-change');
+          numberElement.classList.add("counter-change");
         }
-      } else if (target.id === 'decrement' || target.matches('#decrement *')) {
-        setPreviewCount(c => c - 1);
+      } else if (target.id === "decrement" || target.matches("#decrement *")) {
+        setPreviewCount((c) => c - 1);
         counterExample();
         // Add animation class
-        const numberElement = document.querySelector('.counter-number');
+        const numberElement = document.querySelector(".counter-number");
         if (numberElement) {
-          numberElement.classList.remove('counter-change');
+          numberElement.classList.remove("counter-change");
           void numberElement.offsetWidth; // Trigger reflow
-          numberElement.classList.add('counter-change');
+          numberElement.classList.add("counter-change");
         }
       }
 
       // Handle color palette
-      if (target.classList.contains('color-block')) {
+      if (target.classList.contains("color-block")) {
         const color = target.dataset.color;
         if (color) {
           setSelectedColor(color);
@@ -247,8 +251,8 @@ const Features = () => {
       }
     };
 
-    preview.addEventListener('click', handleClick);
-    return () => preview.removeEventListener('click', handleClick);
+    preview.addEventListener("click", handleClick);
+    return () => preview.removeEventListener("click", handleClick);
   });
 
   return (
@@ -256,8 +260,12 @@ const Features = () => {
       <div class="max-w-6xl mx-auto space-y-16">
         <div class="bg-gray-900/50 backdrop-blur-xl rounded-2xl border border-gray-800/50 overflow-hidden shadow-xl">
           <div class="border-b border-gray-800/50 p-4">
-            <h2 class="text-2xl font-semibold text-white">Interactive Code Playground</h2>
-            <p class="text-gray-400 mt-1">Edit HTML and see it update in real-time</p>
+            <h2 class="text-2xl font-semibold text-white">
+              Interactive Code Playground
+            </h2>
+            <p class="text-gray-400 mt-1">
+              Edit HTML and see it update in real-time
+            </p>
           </div>
 
           <div class="p-6 space-y-6">
@@ -281,10 +289,12 @@ const Features = () => {
                 Color Palette
               </button>
               <button
-                onClick={() => setTheme(t => t === 'light' ? 'dark' : 'light')}
+                onClick={() =>
+                  setTheme((t) => (t === "light" ? "dark" : "light"))
+                }
                 class="px-3 py-1 rounded-lg bg-gray-800 text-white hover:bg-gray-700 transition-colors"
               >
-                Toggle {theme() === 'light' ? 'Dark' : 'Light'} Mode
+                Toggle {theme() === "light" ? "Dark" : "Light"} Mode
               </button>
             </div>
 
@@ -303,7 +313,7 @@ const Features = () => {
               {/* Live Preview */}
               <div class="space-y-2">
                 <h3 class="text-lg font-medium text-white">Preview</h3>
-                <div 
+                <div
                   class={`preview-area ${theme()} p-4 rounded-lg border border-gray-700 overflow-auto`}
                   innerHTML={renderPreview(code())}
                 />
@@ -311,9 +321,7 @@ const Features = () => {
             </div>
 
             <Show when={error()}>
-              <div class="text-red-400 text-sm mt-2">
-                Error: {error()}
-              </div>
+              <div class="text-red-400 text-sm mt-2">Error: {error()}</div>
             </Show>
           </div>
         </div>

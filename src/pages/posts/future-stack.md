@@ -10,7 +10,7 @@ Hi, I'm Jesse – a developer who thrives on the dynamic interplay between robus
 
 **From Enterprise-Level to Open Source, I've Done It All**
 
-My journey spans diverse projects, from architecting career recruitment platforms and streamlining healthcare systems to managing the online presence of major political parties and diving deep into the world of Web3.  This breadth of experience has instilled in me a "best tool for the job" philosophy, allowing me to seamlessly integrate the most effective technologies, whether it's a time-tested framework like Ruby on Rails or a bleeding-edge library like Astro or SolidJS.
+My journey spans diverse projects, from architecting career recruitment platforms and streamlining healthcare systems to managing the online presence of major political parties and diving deep into the world of Web3. This breadth of experience has instilled in me a "best tool for the job" philosophy, allowing me to seamlessly integrate the most effective technologies, whether it's a time-tested framework like Ruby on Rails or a bleeding-edge library like Astro or SolidJS.
 
 **The AI Revolution: More Than Just a Buzzword**
 
