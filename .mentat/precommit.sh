@@ -1,1 +1,2 @@
-npx tsc --noEmit
+npx prettier --write .
+npx eslint . --fix
