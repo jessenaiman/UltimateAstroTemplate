@@ -20,19 +20,23 @@ npm test -- --coverage
 ## Test Coverage
 
 Test coverage reports are generated in HTML, text, and JSON formats. You can find the coverage reports in the following locations:
+
 - HTML report: `coverage/index.html`
 - JSON report: `coverage/coverage-final.json`
 
 Coverage is configured to exclude:
+
 - `node_modules/`
 - `src/test/`
 
 ## Testing Structure
 
 ### 1. Component Tests
+
 Component tests are located in `__tests__` directories adjacent to the components they test. This keeps tests close to their implementation and makes them easy to find.
 
 Example structure:
+
 ```
 src/
   components/
@@ -43,6 +47,7 @@ src/
 ```
 
 ### 2. Framework-Specific Tests
+
 - React components: Use `@testing-library/react`
 - Svelte components: Use `@testing-library/svelte`
 - Vue components: Use `@testing-library/vue`
@@ -50,6 +55,7 @@ src/
 ### 3. Test Patterns
 
 #### React Components
+
 ```typescript
 import { render, screen, fireEvent } from '@testing-library/react';
 
@@ -73,24 +79,26 @@ describe('Component', () => {
 ```
 
 #### Svelte Components
-```typescript
-import { render, fireEvent } from '@testing-library/svelte';
 
-describe('Component', () => {
-  it('should render correctly', () => {
+```typescript
+import { render, fireEvent } from "@testing-library/svelte";
+
+describe("Component", () => {
+  it("should render correctly", () => {
     const { container } = render(Component);
-    expect(container.querySelector('.class')).toBeTruthy();
+    expect(container.querySelector(".class")).toBeTruthy();
   });
 });
 ```
 
 ### 4. Mocking
+
 For components that require browser APIs or external services, use Vitest's mocking capabilities:
 
 ```typescript
 beforeEach(() => {
-  vi.mock('external-service', () => ({
-    service: vi.fn()
+  vi.mock("external-service", () => ({
+    service: vi.fn(),
   }));
 });
 ```
@@ -98,11 +106,13 @@ beforeEach(() => {
 ## Best Practices
 
 1. **Test Organization**
+
    - Use descriptive test names that explain the expected behavior
    - Group related tests using `describe` blocks
    - Keep test files next to the code they're testing
 
 2. **Testing Priorities**
+
    - User interactions
    - Component rendering
    - Error states
@@ -110,6 +120,7 @@ beforeEach(() => {
    - Integration between components
 
 3. **Assertions**
+
    - Use specific assertions (e.g., `toBeInTheDocument()` instead of `toBeTruthy()`)
    - Test for accessibility using role-based queries
    - Test component behavior, not implementation details

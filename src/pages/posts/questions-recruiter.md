@@ -7,35 +7,41 @@ date: "2025-01-24"
 **Questions a Recruiter Might Ask:**
 
 1. **"Future Stack Developer" Title:**
-    *   "The title 'Future Stack Developer' is quite unique. Can you explain what it means to you and why you chose it?"
-    *   "How do you see this role fitting within a traditional development team?"
+
+   - "The title 'Future Stack Developer' is quite unique. Can you explain what it means to you and why you chose it?"
+   - "How do you see this role fitting within a traditional development team?"
 
 2. **Recent Technology Adoption:**
-    *   "I see you've recently gained experience with Astro, SolidJS, React, Next.js, and Remix. Can you tell me more about your learning process and how you've applied these in a project?"
-    *   "Given that these technologies are relatively new to you, how comfortable are you with the advanced concepts and potential edge cases?"
-    *   "What were the challenges you faced while learning these new technologies, and how did you overcome them?"
+
+   - "I see you've recently gained experience with Astro, SolidJS, React, Next.js, and Remix. Can you tell me more about your learning process and how you've applied these in a project?"
+   - "Given that these technologies are relatively new to you, how comfortable are you with the advanced concepts and potential edge cases?"
+   - "What were the challenges you faced while learning these new technologies, and how did you overcome them?"
 
 3. **Project Experience with New Frameworks:**
-    *   "Could you share specific examples of projects where you've utilized these modern frameworks? What was your role in these projects?"
-    *    "What were the outcomes of these projects in terms of scalability, performance and user experience?"
+
+   - "Could you share specific examples of projects where you've utilized these modern frameworks? What was your role in these projects?"
+   - "What were the outcomes of these projects in terms of scalability, performance and user experience?"
 
 4. **AI Experience:**
-    *    "You've listed ChatGPT in your skills. Can you describe how you've used it in a development context? What specific tasks did you use it for?"
-     *    "How comfortable are you with the ethical considerations surrounding the use of AI in development?"
+
+   - "You've listed ChatGPT in your skills. Can you describe how you've used it in a development context? What specific tasks did you use it for?"
+   - "How comfortable are you with the ethical considerations surrounding the use of AI in development?"
 
 5. **Integration of New and Old Skills:**
-    *   "You have a very diverse background with both older and newer technologies. How do you approach integrating these in a project environment?"
-    *   "How do you ensure your knowledge of older tech stacks doesn't become a hindrance as you adopt these newer technologies?"
+
+   - "You have a very diverse background with both older and newer technologies. How do you approach integrating these in a project environment?"
+   - "How do you ensure your knowledge of older tech stacks doesn't become a hindrance as you adopt these newer technologies?"
 
 6. **General Experience:**
-    *   "Looking back at your history as a Team Lead and Senior Developer, what are some of the most significant challenges you've faced, and how did you overcome them?"
+
+   - "Looking back at your history as a Team Lead and Senior Developer, what are some of the most significant challenges you've faced, and how did you overcome them?"
 
 7. **Role Preference**
-    *   "How do you envision your role as a Future Stack Developer contributing to our company?"
+
+   - "How do you envision your role as a Future Stack Developer contributing to our company?"
 
 8. **Community Support:**
-    *   "You have listed Community Support in your title, could you describe your interest and experience with this?"
-
+   - "You have listed Community Support in your title, could you describe your interest and experience with this?"
 
 **Answers:**
 

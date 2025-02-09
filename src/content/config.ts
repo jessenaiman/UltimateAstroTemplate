@@ -1,7 +1,7 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const jobs = defineCollection({
-  type: 'data',
+  type: "data",
   schema: z.object({
     title: z.string(),
     employer: z.string(),
@@ -11,5 +11,5 @@ const jobs = defineCollection({
 });
 
 export const collections = {
-  'jobs': jobs,
+  jobs: jobs,
 };

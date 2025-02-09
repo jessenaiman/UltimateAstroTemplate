@@ -1,8 +1,8 @@
-import React from 'react';
-import { RemixCounter } from './RemixCounter';
-import { AlertDialogDemo } from './AlertDialogDemo';
-import { DropdownMenuDemo } from './DropdownMenuDemo';
-import { TabsDemo } from './TabsDemo';
+import React from "react";
+import { RemixCounter } from "./RemixCounter";
+import { AlertDialogDemo } from "./AlertDialogDemo";
+import { DropdownMenuDemo } from "./DropdownMenuDemo";
+import { TabsDemo } from "./TabsDemo";
 
 interface TabItem {
   value: string;
@@ -16,7 +16,11 @@ interface RemixTabsProps {
   className?: string;
 }
 
-const RemixTabs: React.FC<RemixTabsProps> = ({ tabs, defaultValue = tabs[0]?.value, className = '' }) => {
+const RemixTabs: React.FC<RemixTabsProps> = ({
+  tabs,
+  defaultValue = tabs[0]?.value,
+  className = "",
+}) => {
   const [activeTab, setActiveTab] = React.useState(defaultValue);
 
   return (
@@ -26,7 +30,7 @@ const RemixTabs: React.FC<RemixTabsProps> = ({ tabs, defaultValue = tabs[0]?.val
           <button
             key={tab.value}
             role="tab"
-            className={`tab ${activeTab === tab.value ? 'tab-active' : ''}`}
+            className={`tab ${activeTab === tab.value ? "tab-active" : ""}`}
             onClick={() => setActiveTab(tab.value)}
           >
             {tab.label}
@@ -34,31 +38,31 @@ const RemixTabs: React.FC<RemixTabsProps> = ({ tabs, defaultValue = tabs[0]?.val
         ))}
       </div>
       <div className="p-4 bg-base-200 rounded-b-box min-h-[200px]">
-        {tabs.find(tab => tab.value === activeTab)?.content}
+        {tabs.find((tab) => tab.value === activeTab)?.content}
       </div>
     </div>
   );
-}
+};
 
 const tabs: TabItem[] = [
   {
-    value: 'counter',
-    label: 'Counter',
+    value: "counter",
+    label: "Counter",
     content: <RemixCounter />,
   },
   {
-    value: 'alert',
-    label: 'Alert Dialog',
+    value: "alert",
+    label: "Alert Dialog",
     content: <AlertDialogDemo />,
   },
   {
-    value: 'dropdown',
-    label: 'Dropdown Menu',
+    value: "dropdown",
+    label: "Dropdown Menu",
     content: <DropdownMenuDemo />,
   },
   {
-    value: 'tabs',
-    label: 'Tabs',
+    value: "tabs",
+    label: "Tabs",
     content: <TabsDemo />,
   },
 ];

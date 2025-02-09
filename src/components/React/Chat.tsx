@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import axios from 'axios';
+import React, { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import axios from "axios";
 
 interface Message {
   id: number;
   content: string;
-  sender: 'user' | 'assistant';
+  sender: "user" | "assistant";
 }
 
 const InteractiveShowcase: React.FC = () => {
@@ -13,27 +13,28 @@ const InteractiveShowcase: React.FC = () => {
     {
       id: 1,
       content: "Hi",
-      sender: "assistant"
+      sender: "assistant",
     },
     {
       id: 2,
       content: "Hey, who are you?",
-      sender: "user"
+      sender: "user",
     },
     {
       id: 3,
       content: "AI version of developer Jesse Naiman",
-      sender: "assistant"
+      sender: "assistant",
     },
     {
       id: 4,
       content: "Sick,let's chat, I'm starting",
-      sender: "user"
-    }
+      sender: "user",
+    },
   ]);
 
-  const [newMessage, setNewMessage] = useState('');
-  const [hasRespondedToFirstMessage, setHasRespondedToFirstMessage] = useState(false);
+  const [newMessage, setNewMessage] = useState("");
+  const [hasRespondedToFirstMessage, setHasRespondedToFirstMessage] =
+    useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -45,9 +46,10 @@ const InteractiveShowcase: React.FC = () => {
     }
 
     if (chatContainerRef.current) {
-      const { scrollHeight, clientHeight, scrollTop } = chatContainerRef.current;
+      const { scrollHeight, clientHeight, scrollTop } =
+        chatContainerRef.current;
       const isScrolledToBottom = scrollHeight - clientHeight <= scrollTop + 100;
-      
+
       if (isScrolledToBottom) {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
       }
@@ -66,48 +68,52 @@ const InteractiveShowcase: React.FC = () => {
     const userMessage: Message = {
       id: messages.length + 1,
       content: newMessage,
-      sender: 'user'
+      sender: "user",
     };
-    setMessages(prev => [...prev, userMessage]);
-    setNewMessage('');
+    setMessages((prev) => [...prev, userMessage]);
+    setNewMessage("");
 
     // Call the chat API
     try {
-      const result = await axios.post('https://chatapi.akash.network/api/v1/chat/completions', {
-        model: "Meta-Llama-3-1-8B-Instruct-FP8",
-        messages: [
-          {
-            "role": "user",
-            "content": newMessage
-          }
-        ]
-      }, {
-        headers: {
-          'Authorization': 'Bearer sk-q_0D8kIK7WlIknAWcquS5g', // Replace with your actual API key
-          'Content-Type': 'application/json'
-        }
-      });
+      const result = await axios.post(
+        "https://chatapi.akash.network/api/v1/chat/completions",
+        {
+          model: "Meta-Llama-3-1-8B-Instruct-FP8",
+          messages: [
+            {
+              role: "user",
+              content: newMessage,
+            },
+          ],
+        },
+        {
+          headers: {
+            Authorization: "Bearer sk-q_0D8kIK7WlIknAWcquS5g", // Replace with your actual API key
+            "Content-Type": "application/json",
+          },
+        },
+      );
 
       // Assuming the response structure matches Python's OpenAI response
       let content = result.data.choices[0].message.content;
 
       // Simulating textwrap.fill behavior in JS
-      const wrappedText = content.match(/.{1,50}/g)?.join('\n') || content;
+      const wrappedText = content.match(/.{1,50}/g)?.join("\n") || content;
 
       const assistantMessage: Message = {
         id: messages.length + 2,
         content: wrappedText,
-        sender: 'assistant'
+        sender: "assistant",
       };
-      setMessages(prev => [...prev, assistantMessage]);
+      setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
-      console.error('Error fetching chat response:', error);
+      console.error("Error fetching chat response:", error);
       const errorMsg: Message = {
         id: messages.length + 2,
-        content: 'An error occurred while fetching the response.',
-        sender: 'assistant'
+        content: "An error occurred while fetching the response.",
+        sender: "assistant",
       };
-      setMessages(prev => [...prev, errorMsg]);
+      setMessages((prev) => [...prev, errorMsg]);
     }
   };
 
@@ -132,9 +138,12 @@ const InteractiveShowcase: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Messages */}
-        <div ref={chatContainerRef} className="p-4 h-[400px] overflow-auto bg-gradient-to-b from-transparent to-black/5 scroll-smooth">
+        <div
+          ref={chatContainerRef}
+          className="p-4 h-[400px] overflow-auto bg-gradient-to-b from-transparent to-black/5 scroll-smooth"
+        >
           <div className="space-y-4">
             <AnimatePresence>
               {messages.map((message) => (
@@ -144,13 +153,13 @@ const InteractiveShowcase: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
-                  className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                  className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
                     className={`rounded-2xl px-4 py-2 max-w-[80%] shadow-sm ${
-                      message.sender === 'user'
-                        ? 'bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-800 text-white'
-                        : 'bg-gradient-to-r from-gray-800/80 via-gray-800/80 to-gray-800/80 backdrop-blur-sm border border-white/10'
+                      message.sender === "user"
+                        ? "bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-800 text-white"
+                        : "bg-gradient-to-r from-gray-800/80 via-gray-800/80 to-gray-800/80 backdrop-blur-sm border border-white/10"
                     }`}
                   >
                     {message.content}
